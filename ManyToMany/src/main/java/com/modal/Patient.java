@@ -15,25 +15,25 @@ import javax.persistence.Table;
 @Table(name = "patient")
 public class Patient {
 	@Id
-	@Column
+	@Column(name = "patient_Id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int patient_Id;
-	@Column
-	private String patient_Name;
-	@Column
-	private String mobile_Number;
+	private int patientId;
+	@Column(name = "patient_Name")
+	private String patientName;
+	@Column(name = "mobile_Number")
+	private String mobileNumber;
 	@Column
 	private int age;
 
 	@ManyToMany(mappedBy = "patients")
 	private Set<Doctor> doctors = new HashSet<Doctor>();
 
-	public int getPatient_Id() {
-		return patient_Id;
+	public int getPatientId() {
+		return patientId;
 	}
 
-	public String getMobile_Number() {
-		return mobile_Number;
+	public String getMobileNumber() {
+		return mobileNumber;
 	}
 
 	public int getAge() {
@@ -44,20 +44,20 @@ public class Patient {
 		return doctors;
 	}
 
-	public String getPatient_Name() {
-		return patient_Name;
+	public String getPatientName() {
+		return patientName;
 	}
 
-	public void setPatient_Name(String patient_Name) {
-		this.patient_Name = patient_Name;
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
 	}
 
-	public void setPatient_Id(int patient_Id) {
-		this.patient_Id = patient_Id;
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
 	}
 
-	public void setMobile_Number(String mobile_Number) {
-		this.mobile_Number = mobile_Number;
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 
 	public void setAge(int age) {

@@ -19,11 +19,11 @@ import javax.persistence.Table;
 public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private int doctor_Id;
+	@Column(name = "doctor_Id")
+	private int doctorId;
 
-	@Column
-	private String doctor_Name;
+	@Column(name = "doctor_Name")
+	private String doctorName;
 	@Column
 	private String specialization;
 
@@ -32,14 +32,12 @@ public class Doctor {
 			@JoinColumn(name = "patient_id") })
 	private Set<Patient> patients = new HashSet<Patient>();
 
-	
-
-	public int getDoctor_Id() {
-		return doctor_Id;
+	public int getDoctorId() {
+		return doctorId;
 	}
 
-	public String getDoctor_Name() {
-		return doctor_Name;
+	public String getDoctorName() {
+		return doctorName;
 	}
 
 	public String getSpecialization() {
@@ -50,12 +48,12 @@ public class Doctor {
 		return patients;
 	}
 
-	public void setDoctor_Id(int doctor_Id) {
-		this.doctor_Id = doctor_Id;
+	public void setDoctorId(int doctorId) {
+		this.doctorId = doctorId;
 	}
 
-	public void setDoctor_Name(String doctor_Name) {
-		this.doctor_Name = doctor_Name;
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
 	}
 
 	public void setSpecialization(String specialization) {
